@@ -1,0 +1,38 @@
+
+@font-face {
+    font-family: "LotteMartHappy";
+    font-style: normal;
+    font-weight: 400;
+    src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff2")
+            format("woff2"),
+        url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartHappy/LotteMartHappyMedium.woff")
+            format("woff");
+}
+
+@font-face {
+    font-family: "BMEULJIRO";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    width: 100vw;
+    height: 100%;
+}
+
+body {
+    color: #d5e0d5;
+    background-color: #002400;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}

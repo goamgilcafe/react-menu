@@ -1,0 +1,173 @@
+body {
+    color: #d5e0d5;
+    background-color: #002400;
+    padding-left: 20px;
+}
+
+
+.text-item {
+    display: inline-block;
+    width: 260px;
+}
+
+.price-item {
+    display: inline-block;
+    width: 135px;
+    text-align: center;
+}
+
+.subtext-item {
+    display: block;
+    width: 295px;
+}
+
+.title-item {
+    font-family: "BMEULJIRO";
+    font-size: 38px;
+    padding-top: 18px;
+    padding-bottom: 25px;
+    width: 260px;
+    display: inline-block;
+}
+
+.sub-title-text {
+    font-family: "Abel", sans-serif;
+    font-size: 21px;
+    text-align: center;
+    width: 135px;
+    display: inline-block;
+}
+
+.title-container {
+    display: block;
+}
+
+.title-container:hover {
+    display: block;
+    background-color: rgba(0, 0, 0, 30%);
+}
+
+.sector-item {
+    padding: 2%;
+    padding-bottom: 8px;
+    display: block;
+}
+
+.sector-item:hover {
+    padding: 2%;
+    padding-bottom: 8px;
+    display: block;
+    background-color: rgba(255, 255, 255, 10%);
+}
+
+.menu-container {
+    display: table-cell;
+    width: 430px;
+    padding: 20px;
+    height: 825px;
+    top: 0px;
+    color: whitesmoke;
+}
+
+.menu-container:hover {
+    display: table-cell;
+    background-color: rgba(0, 0, 0, 50%);
+    cursor: pointer;
+}
+
+/* 변경 가능 속성 */
+
+.is-prepared {
+    text-decoration: line-through;
+    color: rgb(156, 156, 156);
+}
+.is-event {
+    color: #ff8080;
+}
+
+.is-hot {
+    color: #00b7c4;
+    /* color: rgb(255, 80, 80); */
+}
+
+.is-prepared-flag {
+    color: white;
+    background-color: #dfd000;
+    font-family: LotteMartHappy;
+    font-size: 15px;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.is-event-flag {
+    color: white;
+    background-color: #ff8080;
+    font-family: LotteMartHappy;
+    font-size: 15px;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.is-hot-flag {
+    color: white;
+    background-color: #00b7c4;
+    /* background-color: #ec6603; */
+    font-family: LotteMartHappy;
+    font-size: 15px;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.status-exception-item {
+    color: #d5e0d5;
+    text-decoration: none;
+}
+
+/* editor */
+
+.menu-editor {
+    box-sizing: border-box;
+}
+
+.menu-editor-item {
+    font-size: 20px;
+    font-family: "LotteMartHappy", sans-serif;
+    color: black;
+    background-color: white;
+    position: relative;
+    padding: 10px;
+    z-index: 1;
+    width: 170px;
+}
+.menu-editor-item:hover {
+    color: rgba(0, 0, 0, 50%);
+    background-color: rgba(255, 255, 255, 50%);
+    cursor: pointer;
+}
+
+.menu-editor-input {
+    position: absolute;
+    top: 0px;
+    left: 190px;
+    background-color: white;
+    z-index: 2;
+}
+
+.menu-editor-input > input {
+    font-size: 20px;
+    font-family: "LotteMartHappy", sans-serif;
+    padding: 5px;
+}
+.menu-editor-input > button {
+    font-size: 20px;
+    padding: 5px;
+    font-family: "LotteMartHappy", sans-serif;
+}
+
+/* description */
+
+.menu-description {
+    width: 480px;
+    height: 230px;
+    background-color: white;
+}

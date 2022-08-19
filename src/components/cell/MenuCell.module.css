@@ -1,0 +1,17 @@
+
+.con {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.con:hover {
+    background-color: rgba(0, 0, 0, 30%);
+}
+
+.edit-con {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

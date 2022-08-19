@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - '.github/workflows/main.yml'
+
+jobs:
+  build:
+    name: 빌드와 디플로이 👀
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [16]
+
+    steps:
+      - name: Checkout master 브랜치
+        uses: actions/checkout@v3
+        with:
+            ref: master
+
+      - name: NodeJS ${{ matrix.node_version }} 설치
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: CI 실행
+        run: |
+          yarn install
+          yarn build 
+          
+      - name: deploy 🔥
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GOAMGIL_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.GOAMGIL_FIREBASE_ACCOUNT }}'
+          projectId: goamgilcafemenu
+          channelId: live

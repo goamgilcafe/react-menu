@@ -1,0 +1,29 @@
+.con {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 2%;
+    bottom: 2%;
+    row-gap: 10px;
+}
+
+.iconcon {
+    border-radius: 15%;
+    background-color: rgba(213,224,213, 0.8);
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.iconcon:hover {
+    background-color: rgba(100, 100, 100, 0.3);
+    color: whitesmoke;
+}
+
+.icon {
+    font-size: 40px;
+}
