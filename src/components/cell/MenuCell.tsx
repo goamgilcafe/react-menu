@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { editModeRecoil, menuDataRecoil } from "../../utils/recoils";
+import React, { useEffect, useState } from "react";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import {
+    editModeRecoil,
+    isEditingRecoil,
+    menuDataRecoil,
+} from "../../utils/recoils";
 import { toast } from "react-toastify";
 import { MdCheckBox } from "react-icons/md";
 import useLayoutCSSSize from "../../hooks/useLayout";
@@ -44,6 +48,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
         padding: conP,
     } = getHorVerPadding(defaultContainerPadding);
     const editMode = useRecoilValue(editModeRecoil);
+    const setIsGlobalEditing = useSetRecoilState(isEditingRecoil);
     const [menuData, setMenuData] = useRecoilState(menuDataRecoil);
     const [{ height: rowHeight }, ref] = useLayoutCSSSize({ hor, ver });
 
@@ -112,6 +117,16 @@ const MenuCell: React.FC<MenuCellProps> = ({
         setMenuData(newMenuData);
         localStorage.setItem("kr", newMenuDataStr);
     };
+
+    useEffect(() => {
+        if (isEditing) {
+            console.log("local is editing is: ", isEditing);
+            setIsGlobalEditing(() => true);
+        } else {
+            setIsGlobalEditing(() => false);
+        }
+    }, [isEditing]);
+
     return (
         <div
             ref={ref}

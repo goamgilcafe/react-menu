@@ -1,17 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import styles from "./App.module.css";
 import Fab from "./components/fab/Fab";
 import MenuContainer from "./components/t-container/MenuContainer";
 import { EditMode } from "./interfaces/Edit";
 import { menuDataMocksKR } from "./utils/mocks";
-import { editModeRecoil, menuDataRecoil } from "./utils/recoils";
+import {
+    editModeRecoil,
+    isEditingRecoil,
+    menuDataRecoil,
+} from "./utils/recoils";
+
+let keyboardListenerAdded = false;
 
 const App = () => {
     const [menuData, setMenuData] = useRecoilState(menuDataRecoil);
+    const [registeredEvListener, setRegisteredEvListener] = useState<
+        (event: KeyboardEvent) => void
+    >((e) => {});
+    const isEditing = useRecoilValue(isEditingRecoil);
     const setEditMode = useSetRecoilState(editModeRecoil);
     const toolRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         const menuDataKR = localStorage.getItem("kr");
         if (menuDataKR) {
@@ -25,15 +36,20 @@ const App = () => {
         const tool = toolRef.current;
         if (tool) {
             tool.style.display = "none";
+        }
+    }, [toolRef]);
+
+    useEffect(() => {
+        const tool = toolRef.current;
+        if (tool) {
             const listener = (event: KeyboardEvent) => {
                 if (event.key === "p" || event.key === "ㅔ") {
                     const toolDisplay = tool.style.display;
-                    if (tool) {
-                        if (toolDisplay === "none") {
-                            tool.style.display = "";
-                        } else {
-                            tool.style.display = "none";
-                        }
+                    console.log(toolDisplay);
+                    if (toolDisplay === "none") {
+                        tool.style.display = "";
+                    } else {
+                        tool.style.display = "none";
                     }
                 } else if (event.key === "e" || event.key === "ㄷ") {
                     setEditMode(EditMode.EDIT);
@@ -43,9 +59,20 @@ const App = () => {
                     setEditMode(EditMode.TAG);
                 }
             };
-            document.addEventListener("keyup", listener);
+            if (!isEditing) {
+                if (!keyboardListenerAdded) {
+                    document.addEventListener("keyup", listener);
+                    keyboardListenerAdded = true;
+                    setRegisteredEvListener(() => listener);
+                } else {
+                    console.log("not added");
+                }
+            } else {
+                document.removeEventListener("keyup", registeredEvListener);
+                keyboardListenerAdded = false;
+            }
         }
-    }, [toolRef]);
+    }, [toolRef, isEditing]);
 
     return (
         <div className={styles.container}>

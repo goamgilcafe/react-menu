@@ -21,3 +21,8 @@ export const menuDataRecoil = atom<MenuData>({
     key: "menuDataRecoil",
     default: [],
 });
+
+export const isEditingRecoil = atom({
+    key: "isEditingRecoil",
+    default: false,
+});

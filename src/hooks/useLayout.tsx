@@ -40,9 +40,9 @@ const useLayoutCSSSize = (
         getLayoutCSSSize();
     }, [current]);
 
-    useEffect(() => {
-        console.log(`height: ${layoutSize.height}, width: ${layoutSize.width}`);
-    }, [layoutSize]);
+    // useEffect(() => {
+    //     console.log(`height: ${layoutSize.height}, width: ${layoutSize.width}`);
+    // }, [layoutSize]);
 
     return [layoutSize, layoutRef];
 };
