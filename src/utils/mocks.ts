@@ -160,7 +160,7 @@ export const menuDataMocksKR = [
                 },
                 rows: [
                     {
-                        text: "리얼아이스티\\n복숭아 \\n 레몬",
+                        text: "리얼아이스티\\n복숭아 / 레몬",
                         price: "--- / 4.0",
                     },
                     {
