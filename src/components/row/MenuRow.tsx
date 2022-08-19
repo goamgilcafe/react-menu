@@ -34,6 +34,7 @@ const MenuRow: React.FC<MenuRowProps> = ({
                 fontSize={fontSize}
                 flex={flexRatio.text}
                 index={[...index, 0]}
+                color={type === RowType.TITLE ? "#00b7c4" : undefined}
             />
             <MenuCell
                 text={price}

@@ -28,6 +28,7 @@ export interface MenuCellProps extends MenuCellData {
     flex?: number;
     align?: string;
     index: number[];
+    color?: string;
 }
 
 const MenuCell: React.FC<MenuCellProps> = ({
@@ -38,6 +39,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
     align = "flex-start",
     whiteSpace,
     index,
+    color,
 }) => {
     const defaultContainerPadding = 15;
     const [isEditing, setIsEditing] = useState(false);
@@ -175,6 +177,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
                                 marginLeft: idx > 0 ? 20 : 0,
                                 marginTop: idx > 0 ? 10 : 0,
                                 whiteSpace,
+                                color,
                             }}
                         >
                             {line}

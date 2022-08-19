@@ -27,6 +27,7 @@
 html {
     width: 100vw;
     height: 90%;
+    overflow: hidden;
 }
 
 body {
