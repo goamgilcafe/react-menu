@@ -1,6 +1,8 @@
-export const menuDataMocksKR = [
+import { MenuSectorData } from "../interfaces/Menu";
+
+export const menuDataMocksKR: MenuSectorData[] = [
     {
-        sectors: [
+        columns: [
             {
                 titleRow: {
                     text: "COFFEE",
@@ -13,22 +15,94 @@ export const menuDataMocksKR = [
                     },
                     {
                         text: "아메리카노",
-                        price: "3.5 / 3.5",
+                        price: "3.5",
                     },
                     {
                         text: "콜드브루",
-                        price: "4.5 / 4.5",
+                        price: "4.5",
                     },
                     {
                         text: "핸드드립",
-                        price: "5.5 / 5.5",
+                        price: "5.5",
                     },
                     {
                         text: "스페셜티",
-                        price: "6.5 / 6.5",
+                        price: "6.5",
                     },
                 ],
             },
+            {
+                titleRow: {
+                    text: "Var. Coffee",
+                    price: "HOT / ICE",
+                },
+                rows: [
+                    {
+                        text: "카라멜마끼아또",
+                        price: "4.5",
+                    },
+                    {
+                        text: "카페모카",
+                        price: "5.0",
+                    },
+                    {
+                        text: "아인슈패너",
+                        price: "5.0",
+                    },
+                    {
+                        text: "아포가토",
+                        price: "--- / 5.0",
+                    },
+                ],
+            },
+            {
+                titleRow: {
+                    text: "Nutty Latte",
+                    price: "HOT / ICE",
+                },
+                rows: [
+                    {
+                        text: "말차라떼",
+                        price: "5.0",
+                    },
+                    {
+                        text: "곡물라떼",
+                        price: "5.0",
+                    },
+                    {
+                        text: "견과율무라떼",
+                        price: "5.0",
+                    },
+                    {
+                        text: "흑임자라떼",
+                        price: "5.0",
+                    },
+                ],
+            },
+            {
+                titleRow: {
+                    text: "ADE",
+                    price: "ICE",
+                },
+                rows: [
+                    {
+                        text: "에이드 \\n 레몬 / 자몽 / 청포도",
+                        price: "5.0",
+                    },
+                    {
+                        text: "모히또",
+                        price: "6.0",
+                    },
+                    {
+                        text: "뱅쇼",
+                        price: "6.0",
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        columns: [
             {
                 titleRow: {
                     text: "Latte Coffee",
@@ -62,35 +136,7 @@ export const menuDataMocksKR = [
 
                     {
                         text: "샷 변경 \\n 콜드브루샷 \\n 디카페인 \\n 스페셜티",
-                        price: "😉 \\n 0.7 \\n1.2 \\n3.0",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        sectors: [
-            {
-                titleRow: {
-                    text: "Var. Coffee",
-                    price: "HOT / ICE",
-                },
-                rows: [
-                    {
-                        text: "카라멜마끼아또",
-                        price: "4.5 / 4.5",
-                    },
-                    {
-                        text: "카페모카",
-                        price: "5.0 / 5.0",
-                    },
-                    {
-                        text: "아인슈패너",
-                        price: "5.0 / 5.0",
-                    },
-                    {
-                        text: "아포가토",
-                        price: "--- / 5.0",
+                        price: " \\n 0.7 \\n1.2 \\n3.0",
                     },
                 ],
             },
@@ -102,19 +148,19 @@ export const menuDataMocksKR = [
                 rows: [
                     {
                         text: "밀크카라멜라떼",
-                        price: "--- / 4.0",
+                        price: "4.0",
                     },
                     {
                         text: "초코라떼",
-                        price: "--- / 5.0",
+                        price: "5.0",
                     },
                     {
                         text: "민트초코라떼",
-                        price: "--- / 5.0",
+                        price: "5.0",
                     },
                     {
                         text: "군고구마라떼",
-                        price: "--- / 5.0",
+                        price: "5.0",
                     },
                     {
                         text: "리얼딸기라떼",
@@ -127,34 +173,6 @@ export const menuDataMocksKR = [
                     {
                         text: "리얼바나나라떼",
                         price: "--- / 5.0",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        sectors: [
-            {
-                titleRow: {
-                    text: "Nutty Latte",
-                    price: "HOT / ICE",
-                },
-                rows: [
-                    {
-                        text: "말차라떼",
-                        price: "5.0 / 5.0",
-                    },
-                    {
-                        text: "곡물라떼",
-                        price: "5.0 / 5.0",
-                    },
-                    {
-                        text: "견과율무라떼",
-                        price: "5.0 / 5.0",
-                    },
-                    {
-                        text: "흑임자라떼",
-                        price: "5.0 / 5.0",
                     },
                 ],
             },
@@ -174,38 +192,14 @@ export const menuDataMocksKR = [
                     },
                     {
                         text: "밀크티",
-                        price: "5.5 / 5.5",
+                        price: "5.5",
                     },
                     {
                         text: "흑당버블티",
-                        price: "5.5 / 5.5",
+                        price: "5.5",
                     },
                     {
                         text: "얼그레이버블티",
-                        price: "6.0 / 6.0",
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        sectors: [
-            {
-                titleRow: {
-                    text: "ADE",
-                    price: "ICE",
-                },
-                rows: [
-                    {
-                        text: "에이드 \\n 레몬 / 자몽 / 청포도",
-                        price: "5.0",
-                    },
-                    {
-                        text: "모히또",
-                        price: "6.0",
-                    },
-                    {
-                        text: "뱅쇼",
                         price: "6.0",
                     },
                 ],

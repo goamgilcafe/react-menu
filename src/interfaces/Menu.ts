@@ -7,11 +7,11 @@ export interface MenuRowData {
     price: string;
 }
 
-export interface MenuSectorData {
+export interface MenuColumnData {
     titleRow: MenuRowData;
     rows: MenuRowData[];
 }
 
-export interface MenuColumnData {
-    sectors: MenuSectorData[];
+export interface MenuSectorData {
+    columns: MenuColumnData[];
 }

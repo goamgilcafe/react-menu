@@ -77,18 +77,18 @@ const MenuCell: React.FC<MenuCellProps> = ({
     const requestEdit = () => {
         console.log(`request to backend!: ${index.toString()}`);
 
-        const colIndex = index[0];
-        const secIndex = index[1];
+        const secIndex = index[0];
+        const colIndex = index[1];
         const rowIndex = index[2];
         const celIndex = index[3];
 
-        const targetColumn = menuData[colIndex];
-        const targetSectors = targetColumn.sectors;
-        const targetSector = targetSectors[secIndex];
+        const targetSector = menuData[secIndex];
+        const targetColumns = targetSector.columns;
+        const targetColumn = targetColumns[colIndex];
         const targetRow =
             rowIndex === 0
-                ? targetSector.titleRow
-                : targetSector.rows[celIndex];
+                ? targetColumn.titleRow
+                : targetColumn.rows[celIndex];
 
         const newRow = { ...targetRow };
         if (celIndex === 0) {
@@ -97,22 +97,22 @@ const MenuCell: React.FC<MenuCellProps> = ({
             newRow.price = editText;
         }
 
-        let newRows = [...targetSector.rows];
+        let newRows = [...targetColumn.rows];
         if (rowIndex !== 0) {
             newRows[rowIndex - 1] = newRow;
         }
 
-        const newSector =
+        const newColumn =
             rowIndex === 0
-                ? { ...targetSector, titleRow: newRow }
-                : { ...targetSector, rows: newRows };
+                ? { ...targetColumn, titleRow: newRow }
+                : { ...targetColumn, rows: newRows };
 
-        const newSectors = [...targetSectors];
-        newSectors[secIndex] = newSector;
+        const newColumns = [...targetColumns];
+        newColumns[colIndex] = newColumn;
 
-        const newColumn = { ...menuData[colIndex], sectors: newSectors };
+        const newSector = { ...menuData[secIndex], columns: newColumns };
         const newMenuData = [...menuData];
-        newMenuData[colIndex] = newColumn;
+        newMenuData[secIndex] = newSector;
 
         const newMenuDataStr = JSON.stringify(newMenuData);
 
@@ -174,7 +174,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
                         <div
                             key={line}
                             style={{
-                                marginLeft: idx > 0 ? 20 : 0,
+                                marginLeft: idx > 0 && index[3] === 0 ? 20 : 0,
                                 marginTop: idx > 0 ? 10 : 0,
                                 whiteSpace,
                                 color,

@@ -1,15 +1,14 @@
 import React from "react";
-import { MenuSectorData } from "../../interfaces/Menu";
+import { MenuColumnData } from "../../interfaces/Menu";
 import { RowType } from "../../interfaces/Row";
 import MenuRow from "../row/MenuRow";
+import styles from "./MenuColumn.module.css";
 
-import styles from "./MenuSector.module.css";
-
-export interface MenuSectorProps extends MenuSectorData {
+export interface MenuColumnProps extends MenuColumnData {
     index: number[];
 }
 
-const MenuSector: React.FC<MenuSectorProps> = ({ titleRow, rows, index }) => {
+const MenuColumn: React.FC<MenuColumnProps> = ({ titleRow, rows, index }) => {
     const { text: titleText, price: subtitleText } = titleRow;
     return (
         <div className={styles.con}>
@@ -31,4 +30,4 @@ const MenuSector: React.FC<MenuSectorProps> = ({ titleRow, rows, index }) => {
     );
 };
 
-export default MenuSector;
+export default MenuColumn;
