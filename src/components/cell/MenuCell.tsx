@@ -163,14 +163,24 @@ const MenuCell: React.FC<MenuCellProps> = ({
                     <MdCheckBox />
                 </div>
             ) : (
-                <span
+                <div
                     style={{
                         whiteSpace,
                         fontSize,
                     }}
                 >
-                    {editText}
-                </span>
+                    {editText.split("\\n").map((line, idx) => (
+                        <div
+                            key={line}
+                            style={{
+                                marginLeft: idx * 10,
+                                marginTop: idx > 0 ? 10 : 0,
+                            }}
+                        >
+                            {line}
+                        </div>
+                    ))}
+                </div>
             )}
         </div>
     );

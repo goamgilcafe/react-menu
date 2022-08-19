@@ -24,6 +24,7 @@ const App = () => {
     const toolRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        setMenuData(menuDataMocksKR);
         const menuDataKR = localStorage.getItem("kr");
         if (menuDataKR) {
             setMenuData(JSON.parse(menuDataKR));

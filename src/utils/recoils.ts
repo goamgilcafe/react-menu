@@ -1,6 +1,7 @@
 import { atom } from "recoil";
 import { EditMode } from "../interfaces/Edit";
 import { MenuColumnData } from "../interfaces/Menu";
+import { menuDataMocksKR } from "./mocks";
 
 export const editModeRecoil = atom({
     key: "editModeRecoil",
@@ -19,7 +20,7 @@ export type MenuData = MenuColumnData[];
 
 export const menuDataRecoil = atom<MenuData>({
     key: "menuDataRecoil",
-    default: [],
+    default: menuDataMocksKR,
 });
 
 export const isEditingRecoil = atom({
