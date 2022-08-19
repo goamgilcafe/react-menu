@@ -59,6 +59,11 @@ export const menuDataMocksKR = [
                         text: "달고나라떼",
                         price: "5.0",
                     },
+
+                    {
+                        text: "샷 변경 \\n 콜드브루샷 \\n 디카페인 \\n 스페셜티",
+                        price: "😉 \\n 0.7 \\n1.2 \\n3.0",
+                    },
                 ],
             },
         ],
