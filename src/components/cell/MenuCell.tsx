@@ -165,7 +165,6 @@ const MenuCell: React.FC<MenuCellProps> = ({
             ) : (
                 <div
                     style={{
-                        whiteSpace,
                         fontSize,
                     }}
                 >
@@ -175,6 +174,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
                             style={{
                                 marginLeft: idx > 0 ? 20 : 0,
                                 marginTop: idx > 0 ? 10 : 0,
+                                whiteSpace,
                             }}
                         >
                             {line}

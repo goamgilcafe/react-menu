@@ -192,7 +192,7 @@ export const menuDataMocksKR = [
                 },
                 rows: [
                     {
-                        text: "에이드 \\n 레몬 / 자몽 /\\n 청포도",
+                        text: "에이드 \\n 레몬 / 자몽 / 청포도",
                         price: "5.0",
                     },
                     {

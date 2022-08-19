@@ -5,8 +5,8 @@
     align-items: center;
     height: 100%;
     flex: 1;
-    row-gap: 3%;
-    justify-content: space-between;
+    row-gap: 10%;
+    /* justify-content:; */
 }
 
 .con:hover {
