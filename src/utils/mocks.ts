@@ -160,11 +160,11 @@ export const menuDataMocksKR = [
                 },
                 rows: [
                     {
-                        text: "리얼아이스티\\n복숭아 / 레몬",
+                        text: "리얼아이스티\\n복숭아 \\n 레몬",
                         price: "--- / 4.0",
                     },
                     {
-                        text: "허브티\\n카모마일 레몬글라스 / 얼그레이 / 페퍼민트 레몬",
+                        text: "허브티\\n카모마일 레몬글라스 \\n 얼그레이 \\n 페퍼민트 레몬",
                         price: "4.0 / 4.5",
                     },
                     {
@@ -207,7 +207,7 @@ export const menuDataMocksKR = [
             },
             {
                 titleRow: {
-                    text: "ICY DRINK",
+                    text: "ICY",
                     price: "ICE",
                 },
                 rows: [
@@ -232,7 +232,7 @@ export const menuDataMocksKR = [
                         price: "6.0",
                     },
                     {
-                        text: "요거트스무디 \\n 플레인 / 딸기 / 블루베리 / 복숭아 / 청귤",
+                        text: "요거트스무디 \\n 플레인 / 딸기 / \\n 블루베리 / \\n 복숭아 / 청귤",
                         price: "6.0",
                     },
                 ],

@@ -39,7 +39,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
     whiteSpace,
     index,
 }) => {
-    const defaultContainerPadding = 10;
+    const defaultContainerPadding = 15;
     const [isEditing, setIsEditing] = useState(false);
     const [editText, setEditText] = useState(text);
     const {
@@ -173,7 +173,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
                         <div
                             key={line}
                             style={{
-                                marginLeft: idx * 10,
+                                marginLeft: idx > 0 ? "20%" : 0,
                                 marginTop: idx > 0 ? 10 : 0,
                             }}
                         >
