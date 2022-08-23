@@ -234,6 +234,10 @@ export const menuDataMocksKR: MenuSectorData[] = [
                         text: "요거트스무디 \\n 플레인 / 딸기 / \\n 블루베리 / \\n 복숭아 / 청귤",
                         price: "6.0",
                     },
+                    {
+                        text: "눈꽃팥빙수",
+                        price: "9.0",
+                    },
                 ],
             },
         ],
