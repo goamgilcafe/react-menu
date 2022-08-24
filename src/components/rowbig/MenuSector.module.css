@@ -1,8 +1,9 @@
 .con {
-    padding: 8px;
+    /* padding: 8px; */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+    gap: 3%;
 }
 
 .con:hover {

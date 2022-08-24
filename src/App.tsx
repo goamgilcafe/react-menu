@@ -24,11 +24,19 @@ const App = () => {
     const toolRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        setMenuData(menuDataMocksKR);
+        if (menuData.length !== 0) {
+            const menuDataStr = JSON.stringify(menuData);
+            localStorage.setItem("kr", menuDataStr);
+            console.log("now menuData: ", menuData);
+        }
+    }, [menuData]);
+
+    useEffect(() => {
         const menuDataKR = localStorage.getItem("kr");
         if (menuDataKR) {
-            setMenuData(JSON.parse(menuDataKR));
+            setMenuData(() => JSON.parse(menuDataKR));
         } else {
+            setMenuData(() => menuDataMocksKR);
             localStorage.setItem("kr", JSON.stringify(menuDataMocksKR));
         }
     }, []);

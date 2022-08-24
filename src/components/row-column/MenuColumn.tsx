@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MenuColumnData } from "../../interfaces/Menu";
 import { RowType } from "../../interfaces/Row";
 import MenuRow from "../row/MenuRow";
@@ -10,6 +10,11 @@ export interface MenuColumnProps extends MenuColumnData {
 
 const MenuColumn: React.FC<MenuColumnProps> = ({ titleRow, rows, index }) => {
     const { text: titleText, price: subtitleText } = titleRow;
+    useEffect(() => {
+        console.log("title and subtitle: ", `${titleText}, ${subtitleText}`);
+        console.log("--------------------------------------------------");
+    }, [titleRow]);
+
     return (
         <div className={styles.con}>
             <MenuRow

@@ -33,7 +33,7 @@ export const menuDataMocksKR: MenuSectorData[] = [
             },
             {
                 titleRow: {
-                    text: "Var. Coffee",
+                    text: "Variant Coffee",
                     price: "HOT / ICE",
                 },
                 rows: [
@@ -96,6 +96,10 @@ export const menuDataMocksKR: MenuSectorData[] = [
                     {
                         text: "뱅쇼",
                         price: "6.0",
+                    },
+                    {
+                        text: "주스",
+                        price: "5.5",
                     },
                 ],
             },
@@ -184,7 +188,7 @@ export const menuDataMocksKR: MenuSectorData[] = [
                 rows: [
                     {
                         text: "리얼아이스티\\n복숭아 / 레몬",
-                        price: "--- / 4.0",
+                        price: "--- / 4.5",
                     },
                     {
                         text: "허브티\\n카모마일 레몬글라스 \\n 얼그레이 \\n 페퍼민트 레몬",

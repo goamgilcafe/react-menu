@@ -1,10 +1,15 @@
 import React from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { editModeRecoil, isOpenLoginModalRecoil } from "../../utils/recoils";
+import {
+    editModeRecoil,
+    isOpenLoginModalRecoil,
+    menuDataRecoil,
+} from "../../utils/recoils";
 import styles from "./Fab.module.css";
 import { AiFillTag, AiOutlineTag } from "react-icons/ai";
-import { MdEdit, MdVisibility, MdVpnKey } from "react-icons/md";
+import { MdEdit, MdVisibility, MdVpnKey, MdRefresh } from "react-icons/md";
 import { EditMode } from "../../interfaces/Edit";
+import { menuDataMocksKR } from "../../utils/mocks";
 
 export interface FabProps {
     toolRef: React.RefObject<HTMLDivElement>;
@@ -13,6 +18,8 @@ export interface FabProps {
 const Fab: React.FC<FabProps> = ({ toolRef }) => {
     const [editMode, setEditMode] = useRecoilState(editModeRecoil);
     const setIsOpenLoginModal = useSetRecoilState(isOpenLoginModalRecoil);
+    const setMenuData = useSetRecoilState(menuDataRecoil);
+
     const changeEditMode = () => {
         setEditMode(() =>
             editMode === EditMode.VIEW
@@ -29,6 +36,10 @@ const Fab: React.FC<FabProps> = ({ toolRef }) => {
     };
     const openLoginModal = () => {
         setIsOpenLoginModal(() => true);
+    };
+
+    const refreshData = () => {
+        setMenuData(() => menuDataMocksKR);
     };
     return (
         <div id="tool" className={styles.con} ref={toolRef}>
@@ -48,6 +59,9 @@ const Fab: React.FC<FabProps> = ({ toolRef }) => {
             </div>
             <div className={styles.iconcon} onClick={openLoginModal}>
                 <MdVpnKey className={styles.icon} />
+            </div>
+            <div className={styles.iconcon} onClick={refreshData}>
+                <MdRefresh className={styles.icon} />
             </div>
         </div>
     );

@@ -52,7 +52,8 @@ const MenuCell: React.FC<MenuCellProps> = ({
     const editMode = useRecoilValue(editModeRecoil);
     const setIsGlobalEditing = useSetRecoilState(isEditingRecoil);
     const [menuData, setMenuData] = useRecoilState(menuDataRecoil);
-    const [{ height: rowHeight }, ref] = useLayoutCSSSize({ hor, ver });
+    const [{ height: cellHeight }, ref] = useLayoutCSSSize({ hor, ver });
+    const paddingTB = editMode === EditMode.EDIT && isEditing ? 0 : conP;
 
     const handleClick = () => {
         if (editMode === EditMode.EDIT) {
@@ -88,7 +89,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
         const targetRow =
             rowIndex === 0
                 ? targetColumn.titleRow
-                : targetColumn.rows[celIndex];
+                : targetColumn.rows[rowIndex - 1];
 
         const newRow = { ...targetRow };
         if (celIndex === 0) {
@@ -114,10 +115,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
         const newMenuData = [...menuData];
         newMenuData[secIndex] = newSector;
 
-        const newMenuDataStr = JSON.stringify(newMenuData);
-
         setMenuData(newMenuData);
-        localStorage.setItem("kr", newMenuDataStr);
     };
 
     useEffect(() => {
@@ -137,7 +135,8 @@ const MenuCell: React.FC<MenuCellProps> = ({
             style={{
                 flex,
                 justifyContent: align,
-                padding: editMode === EditMode.EDIT && isEditing ? 0 : conP,
+                paddingTop: paddingTB,
+                paddingBottom: paddingTB,
             }}
         >
             {editMode === EditMode.EDIT && isEditing ? (
@@ -147,7 +146,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
                         style={{
                             fontSize,
                             width: "100%",
-                            height: rowHeight,
+                            height: cellHeight,
                             paddingLeft: conP,
                         }}
                         onClick={(e) => e.stopPropagation()}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useLayoutCSSSize from "../../hooks/useLayout";
 import { MenuRowData } from "../../interfaces/Menu";
 import { RowType } from "../../interfaces/Row";
@@ -27,6 +27,12 @@ const MenuRow: React.FC<MenuRowProps> = ({
     const fontSize = rowWidth / (type === RowType.ITEM ? 18 : 12);
     const pricefontSize = rowWidth / 18;
 
+    useEffect(() => {
+        if (type === RowType.TITLE) {
+            console.log("title text is ", text);
+        }
+    }, [type]);
+
     return (
         <div className={styles[`con-${type}`]} ref={ref} style={{ padding }}>
             <MenuCell
@@ -35,13 +41,13 @@ const MenuRow: React.FC<MenuRowProps> = ({
                 flex={flexRatio.text}
                 index={[...index, 0]}
                 color={type === RowType.TITLE ? "#00b7c4" : undefined}
+                whiteSpace="nowrap"
             />
             <MenuCell
                 text={price}
                 fontSize={pricefontSize}
                 flex={flexRatio.price}
                 align="center"
-                whiteSpace="nowrap"
                 index={[...index, 1]}
             />
         </div>
