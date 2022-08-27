@@ -206,6 +206,16 @@ export const menuDataMocksKR: MenuSectorData[] = [
                         text: "얼그레이버블티",
                         price: "6.0",
                     },
+                    {
+                        text: "전통차",
+                        price: "4.5 / 5.0",
+                        isTitle: true,
+                    },
+                    {
+                        text: "자몽차 / 청귤차 / 레몬차 / 라임차 / 유자차 \\n 제주한라봉 / 석류차 / 대추차 / 생강차 \\n 모과차 / 견과율무차 (L)",
+                        price: "",
+                        lineBreakIndent: false,
+                    },
                 ],
             },
             {

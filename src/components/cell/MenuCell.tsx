@@ -29,6 +29,7 @@ export interface MenuCellProps extends MenuCellData {
     align?: string;
     index: number[];
     color?: string;
+    lineBreakIndent?: boolean;
 }
 
 const MenuCell: React.FC<MenuCellProps> = ({
@@ -40,6 +41,7 @@ const MenuCell: React.FC<MenuCellProps> = ({
     whiteSpace,
     index,
     color,
+    lineBreakIndent = true,
 }) => {
     const defaultContainerPadding = 15;
     const [isEditing, setIsEditing] = useState(false);
@@ -173,7 +175,10 @@ const MenuCell: React.FC<MenuCellProps> = ({
                         <div
                             key={line}
                             style={{
-                                marginLeft: idx > 0 && index[3] === 0 ? 20 : 0,
+                                marginLeft:
+                                    idx > 0 && index[3] === 0 && lineBreakIndent
+                                        ? 20
+                                        : 0,
                                 marginTop: idx > 0 ? 10 : 0,
                                 whiteSpace,
                                 color,

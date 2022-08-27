@@ -5,6 +5,8 @@ export interface MenuCellData {
 export interface MenuRowData {
     text: string;
     price: string;
+    isTitle?: boolean;
+    lineBreakIndent?: boolean;
 }
 
 export interface MenuColumnData {

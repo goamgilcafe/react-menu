@@ -17,6 +17,8 @@ export interface MenuRowProps extends MenuRowData {
 const MenuRow: React.FC<MenuRowProps> = ({
     text,
     price,
+    isTitle = false,
+    lineBreakIndent,
     p = 0,
     flexRatio = { text: 3, price: 1.5 },
     type = RowType.ITEM,
@@ -40,7 +42,10 @@ const MenuRow: React.FC<MenuRowProps> = ({
                 fontSize={fontSize}
                 flex={flexRatio.text}
                 index={[...index, 0]}
-                color={type === RowType.TITLE ? "#00b7c4" : undefined}
+                color={
+                    isTitle || type === RowType.TITLE ? "#00b7c4" : undefined
+                }
+                lineBreakIndent={lineBreakIndent}
                 whiteSpace="nowrap"
             />
             <MenuCell

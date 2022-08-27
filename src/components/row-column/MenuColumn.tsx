@@ -17,18 +17,12 @@ const MenuColumn: React.FC<MenuColumnProps> = ({ titleRow, rows, index }) => {
 
     return (
         <div className={styles.con}>
-            <MenuRow
-                text={titleText}
-                price={subtitleText}
-                type={RowType.TITLE}
-                index={[...index, 0]}
-            />
+            <MenuRow {...titleRow} type={RowType.TITLE} index={[...index, 0]} />
             {rows.map((row, i) => (
                 <MenuRow
                     key={`row-${row.text}-${i + 1}`}
-                    text={row.text}
-                    price={row.price}
                     index={[...index, i + 1]}
+                    {...row}
                 />
             ))}
         </div>
